@@ -1,0 +1,114 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montagu Slab", serif;
+  font-family: "Noto Sans SC", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "ZCOOL KuaiLe", cursive;
+}
+
+/* 首页背景图 */
+body {
+  background-image: url(./image/backgroundphoto2.JPG);
+}
+
+/* 设置h1-h6的文字高度 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+/* 导航栏的颜色 */
+nav {
+  background-color: #2041fd;
+}
+
+/* 设置导航栏当前所在页面的标签变亮，一眼识别当前在哪个页面里 */
+.active {
+  color: rgb(16, 3, 133);
+}
+
+/* 将处于上层的导航栏 nav和ul设置布局模式为flex ，用justify设置页签们居中对齐*/
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding-left: 1rem;
+  background-color: rgba(241, 247, 238, 0.2);
+}
+
+/* 设置导航栏文字和box边缘的距离 以及居中文字 */
+nav ul li {
+  padding: 0.75rem 2.5rem;
+}
+
+/* 设置导航栏文字为宋体，文字的颜色，再用none去掉默认的样式 */
+nav ul li a {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(246, 246, 248);
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+/* 设置鼠标移上去后目标改变颜色.因为链接自带移上去
+后鼠标改变，就不需要加cursor-pointer了 。
+在以上基础，又加了个鼠标移动时的过渡transition，
+让过渡效果显得更柔和自然*/
+nav ul li a:hover {
+  color: rgb(18, 21, 241);
+  transition: all 0.5s ease;
+}
+
+/* 中央文字的父类样式，包括背景色，高度，文字与边框的距离，透明度,用text居中文字*/
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border: #2041fd;
+  width: 100%;
+  height: 1150px;
+}
+
+/* 中央文字第一排，字体大小和描边 */
+.headerTitle {
+  font-size: 8rem;
+  -webkit-text-stroke: 3px rgb(16, 3, 133);
+}
+
+/* 中央文字第二排，字体大小和描边*/
+.headerText {
+  font-size: 1.2rem;
+  -webkit-text-stroke: 1px rgb(16, 3, 133);
+  color: rgb(206, 206, 214);
+  font-size: 2rem;
+  padding: 2rem;
+}
+
+.header h1 {
+  opacity: 90%;
+  color: rgb(241, 242, 247);
+}
+
+/* 设置正文部分为airal字体（好像是宋体） */
+p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/* 设置导航栏的页签列表，在屏幕小于650px时，由横向变成纵向 */
+@media screen and (max-width: 650px) {
+  nav ul {
+    flex-direction: column;
+  }
+  .headerTitle {
+    flex-direction: column;
+  }
+}
